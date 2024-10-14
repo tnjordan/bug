@@ -65,12 +65,20 @@ class BigBang:
             return df
 
 
-class Corruption(BigBang):
+class BigFreeze(BigBang):
     def __init__(self):
         super().__init__()
     
     def generate_random_data(self, column_dict, n_rows, filename=None):
-        df = super().generate_random_data(column_dict, n_rows)
+        df = super().generate_random_data(column_dict, 0)
+        # add empty rows
+        df.loc[len(df)] = [None] * len(df.columns)
+        if filename:
+            df.to_csv(filename, index=False)
+        else:
+            return df
+    
+    
 
 if __name__ == '__main__':
     big_bang = BigBang()

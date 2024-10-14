@@ -1,5 +1,6 @@
 import pandas as pd
 import random
+from src.utils import *
 
 class DataProcessor:
     def __init__(self):

@@ -10,7 +10,7 @@ def read_csv(csv_file):
 def upload_csv_to_table(db_name, table_name, csv_file):
     conn = sqlite3.connect(db_name)
     # Drop the table if it already exists, do not duplicate data
-    conn.execute(f'DROP TABLE IF EXISTS {table_name}')
+    # conn.execute(f'DROP TABLE IF EXISTS {table_name}')
     data = read_csv(csv_file)
     dp = DataProcessor()
     data = dp.fix(data)
@@ -27,6 +27,6 @@ def read_table(db_name, table_name):
     return df
 
 #%%
-df = upload_csv_to_table('bases/example.db', 'SALES', 'input/2022_1_sales.csv')
-df
+# df = upload_csv_to_table('bases/example.db', 'SALES', 'input/20221_sales.csv')
+# df
 #%%

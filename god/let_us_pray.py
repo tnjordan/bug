@@ -11,10 +11,11 @@ print(os.getcwd())
 import math
 import random
 from datetime import datetime
-from god.creation import BigBang
+from god.creation import BigBang, BigFreeze
 
 
-big_bang = BigBang()
+bb = BigBang()
+bf = BigFreeze()
 
 # Get the current year and month
 current_year = datetime.now().year
@@ -37,8 +38,8 @@ for year in range(current_year - years, current_year + 1):
             {'name': 'count', 'type': 'number', 'start': 1, 'end': int(88*factor_of_sin), 'number_type': 'int'},
             {'name': 'price', 'type': 'number', 'start': 88, 'end': 512*factor_of_sin, 'number_type': 'float', 'decimal_places': 2},
         ]
-        big_bang.generate_random_data(big_bang.generate_column_dict(column_specs), int(88 + (512 - 88) * random.betavariate(1, 2)), f'input/{year}_{month}_sales.csv')
+        bb.generate_random_data(bb.generate_column_dict(column_specs), int(88 + (512 - 88) * random.betavariate(1, 2)), f'input/{year}_{month}_sales.csv')
 
-# TODO corrupt the data
+bf.generate_random_data(bf.generate_column_dict(column_specs), 100, f'input/{year}_{month}_sales.csv')
 
 #%%
