@@ -112,4 +112,4 @@ column_specs = [
     {'name': 'price', 'type': 'number', 'start': 0, 'end': 42, 'number_type': 'float', 'decimal_places': 2},
     {'name': 'y2k', 'type': 'number', 'start': 0, 'end': 1, 'number_type': 'int', 'decimal_places': 0},
 ]
-big_bang.generate_random_data(big_bang.generate_column_dict(column_specs), 100, 'input/1988_5_sales.csv')
+big_bang.generate_random_data(big_bang.generate_column_dict(column_specs), 100, 'input/2001_1_sales.csv')
