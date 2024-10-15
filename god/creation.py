@@ -92,3 +92,13 @@ if __name__ == '__main__':
     ]
     big_bang.generate_random_data(big_bang.generate_column_dict(column_specs), 100, 'input/random_data.csv')
 #%%
+# "TEST" area
+big_bang = BigBang()
+column_specs = [
+    {'name': 'customer', 'type': 'name'},
+    {'name': 'sale_date', 'type': 'date', 'year': 1988, 'month': 5},
+    {'name': 'days_in_inventory', 'type': 'number', 'start': 1, 'end': 42, 'number_type': 'int', 'decimal_places': 0},
+    {'name': 'count', 'type': 'number', 'start': 1, 'end': 42, 'number_type': 'int', 'decimal_places': 0},
+    {'name': 'price', 'type': 'number', 'start': 0, 'end': 42, 'number_type': 'float', 'decimal_places': 2},
+]
+big_bang.generate_random_data(big_bang.generate_column_dict(column_specs), 100, 'input/1988_5_sales.csv')
