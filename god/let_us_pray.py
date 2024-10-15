@@ -31,7 +31,7 @@ for year in range(current_year - years, current_year + 1):
             break
         factor_of_sin = ((math.sin(month * math.pi / 6)+1)/2+1)
         column_specs = [
-            {'name': 'id', 'type': 'number', 'start': 10**11, 'end': 10**12-1, 'number_type': 'int'},
+            {'name': 'id', 'type': 'number', 'start': 10**5, 'end': 10**12-1, 'number_type': 'int'},
             {'name': 'customer', 'type': 'name'},
             {'name': 'sale_date', 'type': 'date', 'year': year, 'month': month},
             {'name': 'days_in_inventory', 'type': 'number', 'start': 1, 'end': 42, 'number_type': 'int'},

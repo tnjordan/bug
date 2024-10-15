@@ -83,7 +83,7 @@ class BigFreeze(BigBang):
 if __name__ == '__main__':
     big_bang = BigBang()
     column_specs = [
-        {'name': 'id', 'type': 'number', 'start': 10**11, 'end': 10**12-1, 'number_type': 'int', 'decimal_places': 0},
+        {'name': 'id', 'type': 'number', 'start': 10**5, 'end': 10**12-1, 'number_type': 'int', 'decimal_places': 0},
         {'name': 'customer', 'type': 'name'},
         {'name': 'sale_date', 'type': 'date', 'year': 1988, 'month': 5},
         {'name': 'days_in_inventory', 'type': 'number', 'start': 1, 'end': 42, 'number_type': 'int', 'decimal_places': 0},
