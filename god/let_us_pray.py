@@ -11,6 +11,7 @@ print(os.getcwd())
 import math
 import random
 from datetime import datetime
+import pandas as pd
 from god.creation import BigBang, BigFreeze
 
 
@@ -42,4 +43,11 @@ for year in range(current_year - years, current_year + 1):
 
 bf.generate_random_data(bf.generate_column_dict(column_specs), 100, f'input/{year}_{month}_sales.csv')
 
+#%%
+# verify file creation
+df = pd.read_csv('input/2023_5_sales.csv')
+columns = df.columns
+columns
+df_new = df.copy()
+df_new.to_csv('input/2023_05_sale.csv', index=False)
 #%%
