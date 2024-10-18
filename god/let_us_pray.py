@@ -47,7 +47,7 @@ bf.generate_random_data(bf.generate_column_dict(column_specs), 100, f'input/{yea
 # verify file creation
 df = pd.read_csv('input/2023_5_sales.csv')
 columns = df.columns
-columns
+# columns
 df_new = df.copy()
 df_new.to_csv('input/2023_05_sale.csv', index=False)
 #%%
