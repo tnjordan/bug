@@ -1,7 +1,7 @@
 import pandas as pd
 import random
 import calendar
-import math
+from decimal import Decimal, ROUND_UP
 import re
 from src.utils import *
 
@@ -64,8 +64,8 @@ class DataProcessor:
         # remove leading zeros
         ds = ds.apply(lambda x: x.lstrip('0'))
         # pad with zeros to keep 12 characters
-        ds = ds.apply(lambda x: x.zfill(12))
-        ds.astype(int)
+        ds = ds.apply(lambda x: x.ljust(12,'0'))
+        ds = ds.astype(int)
         return ds
     
     @staticmethod
@@ -93,10 +93,11 @@ class DataProcessor:
 
     @staticmethod
     def fix_sale_price(df):
-        df_price = df[['price', 'count']]
-        df_price['unit'] = df_price['price'] / df_price['count']
-        df_price['fixed_unit'] = df_price['unit'].apply(lambda x: math.ceil(x * 100) / 100)
-        df_price['fixed_price'] = df_price['fixed_unit'] * df_price['count']
+        df_price = df[['price', 'count']].copy()
+        df_price['unit'] = df_price.apply(lambda row: Decimal(row['price']) / Decimal(row['count']), axis=1)
+        df_price['fixed_unit'] = df_price['unit'].apply(lambda x: x.quantize(Decimal('0.01'), rounding=ROUND_UP))
+        df_price['fixed_price'] = df_price.apply(lambda row: row['fixed_unit'] * Decimal(row['count']), axis=1)
+        df_price['fixed_price'] = df_price['fixed_price'].astype(float)  # sqlite does not support Decimal
         return df_price['fixed_price']
     
     def fix(self, df):
@@ -105,6 +106,7 @@ class DataProcessor:
         df['sale_date'] = self.fix_sale_date(df)
         df['inventory_date'] = self.calculate_inventory_date(df)
         df['price'] = self.fix_sale_price(df)
+        df.columns = [col.upper() for col in df.columns]  # make all columns uppercase for SQL standard
         return df
 
     def plague(self, n):

@@ -9,8 +9,6 @@ def read_csv(csv_file):
 
 def upload_csv_to_table(db_name, table_name, csv_file):
     conn = sqlite3.connect(db_name)
-    # Drop the table if it already exists, do not duplicate data
-    # conn.execute(f'DROP TABLE IF EXISTS {table_name}')
     data = read_csv(csv_file)
     dp = DataProcessor()
     data = dp.fix(data)
