@@ -50,3 +50,12 @@ The enthusiastic intern left has already started working, but their code is ridd
 After everything from IDs, customer names, sale dates, and inventory dates is repaired (or cleverly reconstructed), your final mission is to trace the stolen money and exterminate all bugs, you will ensure that Dataville not only survives the bug plague but comes out stronger than ever.
 
 The town's proletariat are counting on you, and your family is too.
+
+# The Rules
+
+## Use the bug.md file to document your debugging process.
+
+This is a debugging exercise not a see what AI (GPT or co-pilot) can do. Do not just paste the requirements and make new functions, you must identify what and where the bugs are and then discuss how you fixed the bug. Also do not just paste the functions and ask the AI to explain the code to you. You can use AI to help make a solution once you have identified a bug and have a hypothesis how to fix it, similar to how you would have used a google search to look up syntax before.
+
+I would recommend not using co-pilot chat during this exercise since it can access more scope that the question you provide. When using GPT ask specific questions and do not tell the AI why you want what you are asking.
+

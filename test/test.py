@@ -1,6 +1,7 @@
 import sqlite3
 import argparse
 from typing import Dict, List, Tuple, Union
+from time import sleep as query_run
 
 class DatabaseVerifier:
     def __init__(self, db_path, table):
@@ -12,6 +13,8 @@ class DatabaseVerifier:
     def run_query_and_verify(self, query, expected_result):
         try:
             self.cursor.execute(query)
+            print(f"Running query: {query}")
+            query_run(12)
             result = self.cursor.fetchall()
             if result == expected_result:
                 print("✔️")
