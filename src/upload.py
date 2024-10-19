@@ -1,4 +1,6 @@
 #%%
+# TODO: delete after review
+
 import os
 from src.create_db import upload_csv_to_table, read_table
 import sqlite3
@@ -11,7 +13,7 @@ def reset(DB, TABLE):
     conn.execute(f'DROP TABLE IF EXISTS {TABLE}')
     conn.commit()
     conn.close()
-reset()
+reset(DB, TABLE)
 
 for f in os.listdir('input'):
     print('File:', f)
