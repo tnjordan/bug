@@ -26,18 +26,18 @@ Customer Names: Thanks to Dataville’s strict PII privacy policies, all custome
 But the bees didn’t work alone in corrupting the customer names. Another bug the mischievous butterflies (🦋) fluttered into the mess, expanding the truncated bee mess. You see, these butterflies loved literature and beauty, and their obsession led them to expand what remained of the data into fully formed words. However, their logic was whimsical at best, and instead of decrypting the customer names they just left a mess.
 
 To recover the encrypted customer names the architect has instructed you:
-For each word in the butterfly's novel mess take each capital letter and if the capital is a consonant, add the next vowel from AEIYOU too.
+For each word in the butterfly's novel mess take each capital letter and if the capital is a consonant, add the next vowel from AEIYOU.
 Ensure no duplicate lowercase vowels appear in the encrypted customer names.
 The names were palindrome-protected for top-pot security, which means the encrypted names must create a palindrome.
 
-Sale Dates: The snails (🐌) messed with sale dates by shifting the days forward for each of the days in inventory. You need to roll dates over within the same month when necessary, with overflows starting back at the beginning of the month, to restore the proper sale date.
+Sale Dates: The snails (🐌) messed with sale dates by shifting the days back for each of the days in inventory. You need to roll dates over within the same month when necessary, with overflows starting back at the beginning of the month, to restore the proper sale date.
 
-Unit Prices: Finally, the scorpions (🦂) have tampered with item prices by sneaking away fractional cents per item. These pesky critters only took or sometimes left alone full cents. You need to figure out what the correct total sale price was for each transaction.
+Unit Prices: Finally, the scorpions (🦂) have tampered with item prices by sneaking away fractional cents per item. These pesky critters only took or left alone full cents. You need to figure out what the correct total sale price was for each transaction.
 
 Inventory Dates: Unfortunately, the spiders (🕷️) were ruthless. They didn’t just corrupt the inventory dates—they devoured them entirely, leaving behind nothing but bits of tangled webbing. With no actual dates left, you must rely on the days in inventory field to calculate when each item was first added to inventory.
 
 ## The Town’s Financial Crisis: Reconcile the Accounts
-The havoc these bugs caused wasn’t limited to corrupting names and dates. There’s also a more pressing problem the bugs stole money!
+The havoc these bugs caused wasn’t limited to corrupting names and dates. There’s also a more pressing problem: the bugs stole money!
 
 The Dataville accountants need your help to reconcile their accounts. You must analyze the corrupted price entries and determine exactly how much money was stolen by the scorpions each month. This will allow you to correct the financial records and ensure the world is in balance again.
 

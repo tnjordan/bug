@@ -14,7 +14,7 @@ class DatabaseVerifier:
         try:
             self.cursor.execute(query)
             print(f"Running query: {query}")
-            # query_run(12)
+            query_run(8)  # parallel cores
             result = self.cursor.fetchall()
             if result == expected_result:
                 print("✔️")
