@@ -64,6 +64,7 @@ class DatabaseVerifier:
             f"SELECT MIN(INVENTORY_DATE) FROM {self.table};": [('2021-11-21 00:00:00',)],
             f"SELECT MAX(INVENTORY_DATE) FROM {self.table};": [('2024-09-26 00:00:00',)],
             f"SELECT MAX(ID) FROM {self.table};": [(999995413204,)],
+            f"SELECT SUM(DAYS_IN_INVENTORY) FROM {self.table} WHERE SALE_DATE IN ((SELECT MAX(SALE_DATE) FROM {self.table} WHERE strftime('%Y-%m', SALE_DATE) = '2023-02'), (SELECT MAX(SALE_DATE) FROM {self.table} WHERE strftime('%Y-%m', SALE_DATE) = '2024-02'));": [(167,)],
             f"SELECT CUSTOMER FROM {self.table} ORDER BY LENGTH(CUSTOMER) DESC LIMIT 1;": [('PaPoFoFoTeLiOPaGeCCeGaPOiLeToFoFoPaP',)],
             f"SELECT SUM(DAYS_IN_INVENTORY) FROM {self.table};": [(156486,)],
             f"SELECT ROUND(SUM(PRICE),2) FROM {self.table} WHERE strftime('%Y-%m', SALE_DATE) = '2024-03';": [(77725.35,)],
@@ -71,6 +72,8 @@ class DatabaseVerifier:
             f"SELECT SUM(PRICE) FROM (SELECT PRICE FROM {self.table} ORDER BY PRICE ASC LIMIT 3);": [(264.86,)],
             f"SELECT PRICE FROM {self.table} WHERE ID = 445170166202;": [(111.09,)],
             f"SELECT MIN(PRICE / COUNT) AS UNIT_PRICE FROM {self.table};":  [(0.55,)],
+            f"SELECT COUNT(*) FROM {self.table} WHERE DATE(SALE_DATE) = '2024-02-28';": [(2,)],
+            f"SELECT COUNT(*) FROM {self.table} WHERE CUSTOMER IN ('PiLyLLyLiP', 'BaTeYOHHOYeTaB', 'YGeGuByAAyBuGeGY');": [(3,)],
         }
         for q,a in queries.items():
             self.run_query_and_verify(q, a)
