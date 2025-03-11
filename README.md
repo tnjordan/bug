@@ -1,5 +1,15 @@
 # 🐛
 
+## About
+
+> A Python debugging exercise that I developed for a workshop. I started with a presentation on strategies and best practices for debugging, then provided each participant with the [plague](https://github.com/tnjordan/bug/tree/plague) branch in a new repository so they couldn't reverse anything out of the Git history.
+> 
+> The instructions below were provided and, like real life, they are occasionally vague and ambiguous, requiring investigation and testing to fill in the details.
+> 
+> [A favorite bug](https://github.com/tnjordan/bug/blob/2b2ef848ee970329cd8402a430c436378ae4e421/test/test.py#L17)
+> 
+> The whimiscal story for the debugging exercise was inspired by my love of [Advent of Code](https://adventofcode.com/) puzzles.
+
 # Welcome to Dataville!
 
 As you know, in the quiet digital town of Dataville, a peculiar and devastating event has just unfolded—a plague, not of rats or locusts, but of bugs. These creeping creatures have wormed their way into the town's entire data system, wreaking havoc and bringing the town to its knees.
