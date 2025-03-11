@@ -2,7 +2,7 @@
 
 # Welcome to Dataville!
 
-As you know, the quiet digital town of Dataville, a peculiar and devastating event had just unfolded—a plague, not of rats or locusts, but of bugs. These creeping creatures that wormed their way into the town's entire data system, wreaking havoc and bringing it to its knees.
+As you know, in the quiet digital town of Dataville, a peculiar and devastating event has just unfolded—a plague, not of rats or locusts, but of bugs. These creeping creatures have wormed their way into the town's entire data system, wreaking havoc and bringing the town to its knees.
 
 ## The Plague 🐞 🐛 🦋 🐝 🐜 🐌 🦗 🕷️ 🦂
 The town’s citizens had long relied on their robust database to keep things running smoothly. Everything from grocery sales to governmental records lived in the system. But one fateful evening, a swarm of these digital bugs emerged from the depths of the system, each bringing a different brand of chaos.
